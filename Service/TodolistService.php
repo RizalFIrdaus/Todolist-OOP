@@ -33,14 +33,20 @@ class todolistServiceImp implements todolistService
         $todo = new TodoList($todo);
         $this->todolistRepoImp->save($todo);
         echo "Berhasil Menambahkan Todolist" . PHP_EOL;
+        echo PHP_EOL;
+        echo PHP_EOL;
     }
     public function removeTodolist(int $num): void
     {
         $remove = $this->todolistRepoImp->remove($num);
         if ($remove) {
             echo "Berhasil Menghapus" . PHP_EOL;
+            echo PHP_EOL;
+            echo PHP_EOL;
         } else {
             echo "Gagal Menghapus" . PHP_EOL;
+            echo PHP_EOL;
+            echo PHP_EOL;
         }
     }
 }

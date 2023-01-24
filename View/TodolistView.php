@@ -19,7 +19,7 @@ class todolistView
     public function showTodolist(): void
     {
         while (true) {
-
+            echo "Daftar Todolist Kamu" . PHP_EOL;
             $this->todolistService->showTodolist();
             echo "=============================================" . PHP_EOL;
             echo "Menu Pilihan" . PHP_EOL;
@@ -35,6 +35,8 @@ class todolistView
                 break;
             } else {
                 echo "Inputan kamu salah!" . PHP_EOL;
+                echo PHP_EOL;
+                echo PHP_EOL;
             }
         }
         echo "Sampai Jumpa Lagi" . PHP_EOL;
