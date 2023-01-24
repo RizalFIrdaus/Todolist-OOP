@@ -24,6 +24,7 @@ class todolistServiceImp implements todolistService
     public function showTodolist(): void
     {
         echo "APP Todolist created by rizal" . PHP_EOL;
+        echo "=============================================" . PHP_EOL;
         foreach ($this->todolistRepoImp->findAll() as $number => $value) {
             echo "$number. " . $value->getTodo() . PHP_EOL;
         }
