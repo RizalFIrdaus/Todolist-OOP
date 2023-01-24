@@ -21,20 +21,24 @@ class TodolistRepoImp implements TodolistRepo
 
     public function save(TodoList $todoList): void
     {
-        $num = sizeof($this->todoList);
-        $this->todoList[1] = $todoList;
+        $num = sizeof($this->todoList) + 1;
+        $this->todoList[$num] = $todoList;
     }
     public function remove(int $number): bool
     {
-        return false;
+        if ($number > sizeof($this->todoList)) {
+            return false;
+        }
+
+        for ($i = $number; $i < sizeof($this->todoList); $i++) {
+            $this->todoList[$i] = $this->todoList[$i + 1];
+        }
+
+        unset($this->todoList[sizeof($this->todoList)]);
+        return true;
     }
     public function findAll(): array
     {
         return $this->todoList;
     }
 }
-
-$test = new TodolistRepoImp();
-$todo = new TodoList("Cobalah");
-$test->save($todo);
-$test->findAll();
