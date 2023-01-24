@@ -1,10 +1,12 @@
 <?php
 
+namespace Helper;
+
 class Helper
 {
     static function Input(string $info): string
     {
-        echo "$info" . PHP_EOL;
+        echo "$info";
         $res = fgets(STDIN);
         return trim($res);
     }
